@@ -46,4 +46,12 @@ pub mod types {
             }
         }
     }
+
+    pub fn cost(input: &Input) -> f64 {
+        match input {
+            Input::TasaFijaUniforme { costo, .. } => {
+                costo.clone()
+            }
+        }
+    }
 }

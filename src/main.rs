@@ -1,4 +1,5 @@
 
+use crate::types::types::cost;
 use crate::types::types::years;
 use crate::types::types::depreciacion;
 use crate::types::types::first;
@@ -19,7 +20,13 @@ fn main() {
     println!("{:?}% ${:?}", tfu, d);
     println!("================================================================");
 
+    let mut costo_inicial = cost(item);
+    let mut dep_acc = 0 as f64;
     for year in 0..vida_util {
-        println!("{:?}", year);
+        let dep = costo_inicial * tfu;
+        let dep = costo_inicial * tfu;
+        println!("{:?} {:?} {:?} {:?}", year, dep);
+
+
     }
 }
