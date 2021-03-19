@@ -9,8 +9,8 @@ pub mod types {
         TasaFijaUniforme {
             costo: f64,
             desecho: f64,
-            vida_util: f64
-        }
+            vida_util: f64,
+        },
     }
 
     pub fn json_to_input(line: io::Result<String>) -> Input {
@@ -25,33 +25,23 @@ pub mod types {
 
     pub fn tasa_fija_uniforme(input: &Input) -> f64 {
         match input {
-            Input::TasaFijaUniforme { costo, desecho, vida_util } => {
-                1.0 - f64::powf(desecho/costo, 1.0/vida_util)
-            }
-        }
-    }
-
-    pub fn depreciacion(input: &Input) -> f64 {
-        match input {
-            Input::TasaFijaUniforme { costo, desecho, vida_util } => {
-                (1.0 - f64::powf(desecho/costo, 1.0/vida_util)) * costo
-            }
+            Input::TasaFijaUniforme {
+                costo,
+                desecho,
+                vida_util,
+            } => 1.0 - f64::powf(desecho / costo, 1.0 / vida_util),
         }
     }
 
     pub fn years(input: &Input) -> f64 {
         match input {
-            Input::TasaFijaUniforme { vida_util, .. } => {
-                vida_util.clone()
-            }
+            Input::TasaFijaUniforme { vida_util, .. } => vida_util.clone(),
         }
     }
 
     pub fn cost(input: &Input) -> f64 {
         match input {
-            Input::TasaFijaUniforme { costo, .. } => {
-                costo.clone()
-            }
+            Input::TasaFijaUniforme { costo, .. } => costo.clone(),
         }
     }
 }
