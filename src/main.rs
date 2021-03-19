@@ -32,7 +32,7 @@ fn main() {
     for year in 0..vida_util {
         if year == 0 {
             println!(
-                "{:?} \t\t {:?} \t\t\t\t {:?} \t\t\t\t {:?}",
+                "{:?} \t\t {:?} \t\t\t {:?} \t\t\t {:?}",
                 0, 0, 0, valor_neto
             );
             continue;
@@ -41,7 +41,7 @@ fn main() {
         dep_acc = dep_acc + dep;
         valor_neto = valor_neto - dep;
         println!(
-            "{:?} \t\t {:?} \t\t {:?} \t\t {:?}",
+            "{:?} \t\t {:?} \t {:?} \t {:?}",
             year, dep, dep_acc, valor_neto
         );
     }
