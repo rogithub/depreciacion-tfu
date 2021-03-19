@@ -22,7 +22,7 @@ fn main() {
         "===================================================================================="
     );
     println!("Año \t\t Depreciación \t\t Depreciación \t\t Valor Neto");
-    println!("Año \t\t Anual        \t\t Acumulada    \t\t ");
+    println!("    \t\t Anual        \t\t Acumulada    \t\t ");
     println!(
         "===================================================================================="
     );
