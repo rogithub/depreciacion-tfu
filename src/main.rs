@@ -7,6 +7,14 @@ use crate::types::types::Input;
 use std::io::{self, BufRead};
 mod types;
 
+/*
+
+use crate::types::types::output_to_json;
+use crate::types::types::to_output;
+use crate::types::types::Output;
+
+*/
+
 fn main() {
     let stdin = io::stdin();
     let inputs: Vec<Input> = stdin.lock().lines().map(json_to_input).collect();
@@ -45,4 +53,12 @@ fn main() {
             year, dep, dep_acc, valor_neto
         );
     }
+
+    /*
+    let outputs: Vec<String> = to_output(item).iter().map(output_to_json).collect();
+
+    for o in outputs {
+        println!("{:?}", o);
+    }
+    */
 }
