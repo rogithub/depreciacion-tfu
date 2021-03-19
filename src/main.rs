@@ -1,4 +1,5 @@
 
+use crate::types::types::years;
 use crate::types::types::depreciacion;
 use crate::types::types::first;
 use crate::types::types::json_to_input;
@@ -10,9 +11,15 @@ mod types;
 fn main() {
     let stdin = io::stdin();
     let inputs: Vec<Input> = stdin.lock().lines().map(json_to_input).collect();
-    let tfu = tasa_fija_uniforme(first(&inputs).unwrap());
-    let d = depreciacion(first(&inputs).unwrap());
-    for _i in inputs {
-        println!("{:?} {:?}", tfu, d);
+    let item = first(&inputs).unwrap();
+    let tfu = tasa_fija_uniforme(item);
+    let d = depreciacion(item);
+    let vida_util = years(item) as i64;
+
+    println!("{:?}% ${:?}", tfu, d);
+    println!("================================================================");
+
+    for year in 0..vida_util {
+        println!("{:?}", year);
     }
 }

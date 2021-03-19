@@ -38,4 +38,12 @@ pub mod types {
             }
         }
     }
+
+    pub fn years(input: &Input) -> f64 {
+        match input {
+            Input::TasaFijaUniforme { vida_util, .. } => {
+                vida_util.clone()
+            }
+        }
+    }
 }
