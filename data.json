@@ -1,1 +1,5 @@
-{ "costo": 7500, "desecho": 500, "vidaUtil": 4 }
+{
+    "costo": 7500,
+    "desecho": 500,
+    "vidaUtil": 4
+}
